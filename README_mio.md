@@ -33,3 +33,7 @@
 
 4.-Levante el servidor:
    Ejecutar servidor app.py en terminal: flask run --debug 
+
+Control de version:
+
+git commit -m "Making environment"
