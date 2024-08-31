@@ -20,19 +20,28 @@
     ENV/
     env.bak/
     venv.bak/   
+5.- Salir de Visual CODE
 
-5.-Active el ambiente virtual
+6.- Entrar a la carpeta del repo
+
+7.- Abrir Visual Code desde la carpeta del repo para que se vea .venv ignorado
+
+8.-Active el ambiente virtual
    Pasar a la consola command prompt
    Pasar al directorio del repo:
       cd hack_backend_python_1
    Activar el ambiente
    .venv\Scripts\activate
 
-3.-Cree el ambiente con requirements.txt
+9.-Cree el ambiente con requirements.txt
    pip install -r requirements.txt 
 
-4.-Levante el servidor:
+10.-Levante el servidor:
    Ejecutar servidor app.py en terminal: flask run --debug 
+
+
+
+
 
 Control de version:
 
