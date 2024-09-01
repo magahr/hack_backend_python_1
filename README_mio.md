@@ -37,7 +37,8 @@
    pip install -r requirements.txt 
 
 10.-Levante el servidor:
-   Ejecutar servidor app.py en terminal: flask run --debug 
+   Ejecutar servidor app.py en terminal: 
+   flask run --debug 
 
 
 
