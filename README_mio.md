@@ -41,9 +41,13 @@
    flask run --debug 
 
 
-
-
+NOTA: en caso de no reconocer el comando "pytest"
+          ejecutar el pytest así: python -m pytest test_hack.py -v
+                                  pytest -v test_server.py::test_hack_1
+                        python -m pytest -v test_server.py::test_hack_1
 
 Control de version:
 
 git commit -m "Making environment"
+git commit -m "Making all commit"
+
