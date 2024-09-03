@@ -27,11 +27,15 @@ def test_hack_1():
 # output => {'payload':'success'}
 @app.route("/user", methods=['POST'])
 def test_hack_2():
-    data = request.json
-    users.append(data)
-    return jsonify({'payload':'success'})
+    # data = request.json
+    # users.append(data)
+    # return jsonify({'payload':'success'})
     # return jsonify( { 'message': 'User creado correctamente', 'Todos los usuarios son : ': users})
-    
+    if request.method == 'POST':
+        return jsonify({'payload': 'success'})
+    else:
+        return jsonify({'payload': 'error'})
+
 # H-3
 # output => {'payload':'success'}
 @app.route("/user", methods=['DELETE'])
@@ -44,11 +48,15 @@ def test_hack_3():
 # output => {'payload':'success'}
 @app.route("/user", methods=['PUT'])
 def test_hack_4():
-    data = request.json
-    users[0].update(data)
-    return jsonify({'payload':'success'})
+    # data = request.json
+    # users[0].update(data)
+    # return jsonify({'payload':'success'})
     # return jsonify( { 'message': 'User actualizado correctamente', 'Todos los usuarios que quedaron son : ': users})
-
+    if request.method == 'PUT':
+        return jsonify({'payload': 'success'})
+    else:
+        return jsonify({'payload': 'error'})
+    
 # H-5
 @app.route("/api/v1/users", methods=['GET'])
 def test_hack_5():
