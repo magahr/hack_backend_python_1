@@ -20,30 +20,34 @@ def hello_world():
 # output => {'payload':'success'}
 @app.route("/users", methods=['GET'])
 def test_hack_1():
-    return jsonify(users)
+    # return jsonify(users)
+    return jsonify({'payload':'success'})
 
 # H-2
 # output => {'payload':'success'}
-@app.route("/users", methods=['POST'])
+@app.route("/user", methods=['POST'])
 def test_hack_2():
     data = request.json
     users.append(data)
-    return jsonify( { 'message': 'User creado correctamente', 'Todos los usuarios son : ': users})
+    return jsonify({'payload':'success'})
+    # return jsonify( { 'message': 'User creado correctamente', 'Todos los usuarios son : ': users})
     
 # H-3
 # output => {'payload':'success'}
-@app.route("/users", methods=['DELETE'])
+@app.route("/user", methods=['DELETE'])
 def test_hack_3():
     users.clear()
-    return jsonify( { 'message': 'User eliminado correctamente', 'Todos los usuarios que quedaron son : ': users})
+    return jsonify({'payload':'success'})
+    # return jsonify( { 'message': 'User eliminado correctamente', 'Todos los usuarios que quedaron son : ': users})
 
 # H-4
 # output => {'payload':'success'}
-@app.route("/users", methods=['PUT'])
+@app.route("/user", methods=['PUT'])
 def test_hack_4():
     data = request.json
     users[0].update(data)
-    return jsonify( { 'message': 'User actualizado correctamente', 'Todos los usuarios que quedaron son : ': users})
+    return jsonify({'payload':'success'})
+    # return jsonify( { 'message': 'User actualizado correctamente', 'Todos los usuarios que quedaron son : ': users})
 
 # H-5
 @app.route("/api/v1/users", methods=['GET'])
@@ -53,11 +57,18 @@ def test_hack_5():
 
 # H-6 - la probe por postma sin el envio por la url
 
-@app.route("/api/v1/users", methods=['POST'])
+@app.route("/api/v1/userapi/v1/user?email=foo@foo.foo&name=fooziman", methods=['POST'])
 def test_hack_6():
     data = request.json
     users.append(data)
-    return jsonify( { 'message': 'User creado correctamente', 'Todos los usuarios son : ': users})
+    return jsonify({
+        'payload': {
+            'email':email,
+            'name':name,
+        }
+    })
+
+    # return jsonify( { 'message': 'User creado correctamente', 'Todos los usuarios son : ': users})
 
 # H-7 -
 @app.route("/api/v1/user/add", methods=['POST'])
@@ -99,8 +110,13 @@ def test_hack_8():
     # el dictionary se agrega a la lsita 
     users.append(user)
     # se devuelve la respuesta json que contiene el dic que fue agregado
-    return jsonify({'payload': user})
-
+    # return jsonify({'payload': user})
+    return jsonify({
+        'payload': {
+            'email':email,
+            'name':name,
+            'id':id,
+        }})
 
 
 if __name__ == '__main__':
