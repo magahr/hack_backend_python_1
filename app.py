@@ -45,18 +45,27 @@ def test_hack_3():
     # return jsonify( { 'message': 'User eliminado correctamente', 'Todos los usuarios que quedaron son : ': users})
 
 # H-4
-# output => {'payload':'success'}
+# output => {'payload':'success'}   falta
+# @app.route("/user", methods=['PUT'])
+# def test_hack_4():
+#     # data = request.json
+#     # users[0].update(data)
+#     # return jsonify({'payload':'success'})
+#     # return jsonify( { 'message': 'User actualizado correctamente', 'Todos los usuarios que quedaron son : ': users})
+#     #  if request.method == 'PUT':
+#         return jsonify({'payload': 'success'})
+    # else:
+    #     return jsonify({'payload': 'error'})
 @app.route("/user", methods=['PUT'])
 def test_hack_4():
-    # data = request.json
-    # users[0].update(data)
-    # return jsonify({'payload':'success'})
-    # return jsonify( { 'message': 'User actualizado correctamente', 'Todos los usuarios que quedaron son : ': users})
     if request.method == 'PUT':
         return jsonify({'payload': 'success'})
     else:
         return jsonify({'payload': 'error'})
-    
+
+
+
+
 # H-5
 @app.route("/api/v1/users", methods=['GET'])
 def test_hack_5():

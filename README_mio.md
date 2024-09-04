@@ -51,3 +51,7 @@ Control de version:
 git commit -m "Making environment"
 git commit -m "Making all commit"
 
+listos probados con el test del profe
+01, 02, 03, 05, 06
+no funcionan
+04,07,08
