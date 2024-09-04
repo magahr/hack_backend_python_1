@@ -58,10 +58,10 @@ def test_hack_3():
     #     return jsonify({'payload': 'error'})
 @app.route("/user", methods=['PUT'])
 def test_hack_4():
-    if request.method == 'PUT':
+    # if request.method == 'PUT':
         return jsonify({'payload': 'success'})
-    else:
-        return jsonify({'payload': 'error'})
+    # else:
+    #     return jsonify({'error': True})
 
 
 
